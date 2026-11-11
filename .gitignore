@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Data & models (never commit)
+Data/
+SEP-PRISM_Data/
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.npz
+*.parquet
+*.feather
+
+# Large / generated outputs
+Eval_outputs/
+Feature_Website/
+Postanalysis_Website/
+figures/
+*.png
+*.pdf
+!docs/**/*.png
+
+# Notebooks checkpoints
+.ipynb_checkpoints/

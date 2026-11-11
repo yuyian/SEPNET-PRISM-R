@@ -1,0 +1,90 @@
+{
+  "config": {
+    "feature_file": "sharp_flare",
+    "prob_col": "mtm_lstm_cls_prob",
+    "proton_col": "ProtonFlux_max_pfu_1h_before_end",
+    "xrs_col": "XRSB_max_1h_before_end",
+    "cme_col": null,
+    "truth_col": "mtm_lstm_cls_true",
+    "time_col": "window_end",
+    "max_duration": 72,
+    "tune_objective": "tp_fp_target",
+    "weight_grid": [
+      0.44,
+      0.46,
+      0.48,
+      0.5,
+      0.52
+    ],
+    "tp_target_test": 150.0,
+    "fp_target_test": 200.0,
+    "train_tp_scale": 0.015,
+    "train_fp_scale": 0.072,
+    "tp_weight": 4.0,
+    "fp_weight": 1.0,
+    "fp_cap_frac": 0.9,
+    "tp_margin": 80.0,
+    "w_target": 0.46
+  },
+  "fit": {
+    "emit_coef": {
+      "(Intercept)": -5.156671725332591,
+      "x_prob_s": 1.3501022180979343,
+      "x_pf_s": 0.7250381852371705,
+      "x_xrs_s": 0.019419904122508866
+    },
+    "entry_coef": {
+      "(Intercept)": -8.057473603698138,
+      "x_prob_s": 1.4337361595037268,
+      "x_pf_s": -0.7355843448697575,
+      "x_xrs_s": -0.07395259972465197
+    },
+    "exit_coef": {
+      "(Intercept)": -2.5751192956599143,
+      "dur_s": 0.5406618347586432,
+      "x_prob_s": -0.40414948109158777,
+      "x_pf_s": -0.14847753299877048,
+      "x_xrs_s": -0.30532012333333963
+    },
+    "scaler": {
+      "cols": [
+        "x_prob",
+        "x_pf",
+        "x_xrs"
+      ],
+      "center": {
+        "x_prob": -0.8678488968675377,
+        "x_pf": 0.4788702130329038,
+        "x_xrs": 2.25085408998459e-06
+      },
+      "scale": {
+        "x_prob": 1.8423691548818304,
+        "x_pf": 0.7795020245259957,
+        "x_xrs": 1.798128802286729e-05
+      }
+    },
+    "dur_scaler": {
+      "cols": [
+        "dur_prev"
+      ],
+      "center": {
+        "dur_prev": 53.410919804806184
+      },
+      "scale": {
+        "dur_prev": 47.53840462085431
+      }
+    },
+    "prior": [
+      0.9521822016175545,
+      0.04781779838244553
+    ],
+    "D": 72,
+    "cme_col": null
+  },
+  "best_w": 0.44,
+  "threshold": 0.1,
+  "tp_target_train": 10000.0,
+  "fp_target_train": 2777.777777777778,
+  "fp_cap": 3203.0,
+  "train_baseline_fp": 3203.0
+}
